@@ -2017,6 +2017,8 @@ body.ie ._ibg img {
 .resume__wrapper {
   display: grid;
   grid-template-columns: repeat(2, 425px);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
   -webkit-column-gap: 135px;
      -moz-column-gap: 135px;
           column-gap: 135px;
@@ -2025,15 +2027,40 @@ body.ie ._ibg img {
 
 .resume__column {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0 0 0 8px;
 }
 
 .resume__column .title_small-circle {
   padding: 0 0 0 35px;
 }
 
+.resume__list {
+  height: 100%;
+  position: relative;
+}
+
+.resume__list::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: -3px;
+  left: 0;
+  background-color: #000;
+}
+
 .resume__list li {
   position: relative;
-  height: 100%;
   padding: 0 0 0 43px;
 }
 
@@ -2049,6 +2076,7 @@ body.ie ._ibg img {
 
 .resume-item {
   padding: 30px 0 0 0;
+  height: 100%;
 }
 
 .resume-item__head {
@@ -2127,7 +2155,7 @@ body.ie ._ibg img {
   text-align: center;
   position: relative;
   padding: 0 0 25px 0;
-  margin: 0 0 85px 0;
+  margin: 0 0 60px 0;
 }
 
 .skills__subtitle::after {
@@ -2194,6 +2222,7 @@ body.ie ._ibg img {
 
 .progress-block {
   position: relative;
+  padding: 8px 0 0 0;
 }
 
 .progress-block__title {
@@ -2222,7 +2251,7 @@ body.ie ._ibg img {
 
 .progress-block__count {
   position: absolute;
-  top: 0;
+  top: 8px;
   right: 0;
 }
 
@@ -2586,6 +2615,13 @@ body.ie ._ibg img {
        -moz-column-gap: 30px;
             column-gap: 30px;
   }
+
+  .resume__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 65px;
+       -moz-column-gap: 65px;
+            column-gap: 65px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -2622,7 +2658,14 @@ body.ie ._ibg img {
 
   .about__skills {
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    row-gap: 30px;
+  }
+
+  .resume__wrapper {
+    -webkit-column-gap: 45px;
+       -moz-column-gap: 45px;
+            column-gap: 45px;
+    padding: 40px 20px 0 20px;
   }
 }
 
@@ -2673,12 +2716,31 @@ body.ie ._ibg img {
        -moz-column-gap: 25px;
             column-gap: 25px;
   }
+
+  .resume {
+    padding: 40px 0 0 0;
+  }
+
+  .skills__subtitle {
+    padding: 0 0 15px 0;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .skills__progress {
+    padding: 40px 0 0 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 @media (max-width: 575.98px) {
   .title_fz24_m {
     font-size: 24px;
     line-height: 36px;
+  }
+
+  .title_fz20_m {
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .title_fz48 {
@@ -2704,6 +2766,29 @@ body.ie ._ibg img {
 
   .about__skills {
     grid-template-columns: 100%;
+  }
+
+  .resume__wrapper {
+    grid-template-columns: minmax(300px, 450px);
+    padding: 40px 0 0 0;
+    row-gap: 40px;
+  }
+
+  .resume__list li::after {
+    top: -7px;
+  }
+
+  .skills__subtitle {
+    padding: 0 0 15px 0;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .skills__blocks {
+    grid-template-columns: repeat(auto-fit, 300px);
+    row-gap: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
