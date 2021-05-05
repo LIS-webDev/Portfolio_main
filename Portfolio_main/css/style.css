@@ -2177,10 +2177,13 @@ body.ie ._ibg img {
 
 .skills__blocks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, 270px);
   grid-template-rows: repeat(2, 270px);
   grid-auto-rows: 270px;
   gap: 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .skills__progress {
@@ -2667,6 +2670,11 @@ body.ie ._ibg img {
             column-gap: 45px;
     padding: 40px 20px 0 20px;
   }
+
+  .skills__blocks {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -2784,7 +2792,7 @@ body.ie ._ibg img {
   }
 
   .skills__blocks {
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 270px);
     row-gap: 20px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
