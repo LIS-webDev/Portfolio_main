@@ -2732,6 +2732,10 @@ body.ie ._ibg img {
             column-gap: 25px;
   }
 
+  .resume__wrapper {
+    padding: 0;
+  }
+
   .skills__subtitle {
     padding: 0 0 15px 0;
     margin: 0px 0px 40px 0px;
