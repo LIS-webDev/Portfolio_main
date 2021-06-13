@@ -48,17 +48,27 @@ function setProgress() {
     });
 }
 
+function addSmoothScroll() {
+    let scrollList = document.querySelectorAll('.smooth-scroll');
+    scrollList.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            let scrollToElem = item.getAttribute('href');
+            let coordinates = document.querySelector(scrollToElem).offsetTop;
+            setTimeout(() => {
+                window.scrollTo({
+                    top: coordinates,
+                    behavior: "smooth"
+                });
+            });
+        });
+    });
+}
 
 showMenu('menu');
 closeMenuOnLink('menu');
 setProgress();
-
-
-//FORM===================================================================================================================================
-
-
-
-//========================================================================================================================================================
+addSmoothScroll();
 
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
